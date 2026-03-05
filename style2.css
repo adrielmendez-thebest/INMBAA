@@ -1,0 +1,200 @@
+:root {
+    --color-principal: #1E3A5F;
+    --color-secundario: #C9A227;
+    --color-fondo: #F4F6F9;
+    --color-blanco: #FFFFFF;
+    --color-texto: #2C2C2C;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--color-fondo);
+    color:var(--color-texto);
+}
+
+/* HEADER */
+.header{
+    background:var(--color-principal);
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+}
+
+.logo-container{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-img{
+    width:45px;
+}
+
+.nav{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+.nav a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.nav a:hover,
+.nav .active{
+    color:var(--color-secundario);
+}
+
+/* HERO */
+.hero {
+    height: 90vh;
+    background: url('https://images.unsplash.com/photo-1507089947368-19c1da9775ae') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    background: rgba(0,0,0,0.6);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+
+
+/* SECCIONES */
+.sobre-nosotros,
+.experiencia{
+    padding:90px 8%;
+}
+
+.contenedor{
+    display:flex;
+    gap:60px;
+    align-items:center;
+}
+
+.reverse{
+    flex-direction:row-reverse;
+}
+
+.imagen img{
+    width:100%;
+    border-radius:14px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.texto h2{
+    margin-bottom:20px;
+    font-size:28px;
+}
+
+.texto p{
+    line-height:1.8;
+}
+
+/* FILOSOFÍA NORMAL */
+.filosofia{
+    padding:90px 8%;
+    text-align:center;
+    background:white;
+}
+
+.valores{
+    display:flex;
+    gap:30px;
+    margin-top:50px;
+}
+
+.valor{
+    background:var(--color-fondo);
+    padding:25px;
+    border-radius:14px;
+    transition:0.3s;
+}
+
+.valor:hover{
+    transform:translateY(-6px);
+}
+
+.valor img{
+    width:100%;
+    border-radius:12px;
+    margin-bottom:15px;
+}
+
+
+/* FOOTER */
+.footer{
+    background:var(--color-principal);
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+/* ===== OPTIMIZACIÓN GLOBAL ===== */
+
+/* Evita layout shift */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Lazy rendering */
+img[loading="lazy"] {
+    content-visibility: auto;
+}
+
+/* Mejora contraste en hero */
+.hero {
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero {
+        height: auto;
+        padding: 60px 20px;
+    }
+}
